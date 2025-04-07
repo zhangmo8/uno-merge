@@ -1,6 +1,6 @@
 {
   "name": "uno-merge",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "packageManager": "pnpm@10.7.1",
   "description": "Utility function to efficiently merge UnoCSS classes without style conflicts",
   "type": "module",
