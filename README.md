@@ -1,41 +1,39 @@
-# ts-starter [![npm](https://img.shields.io/npm/v/ts-starter.svg)](https://npmjs.com/package/ts-starter)
+# uno-merge WIP 🚧
 
-[![Unit Test](https://github.com/sxzz/ts-starter/actions/workflows/unit-test.yml/badge.svg)](https://github.com/sxzz/ts-starter/actions/workflows/unit-test.yml)
-
-My awesome typescript library
-
-<!-- Remove belows -->
-
-Forked from [egoist/ts-starter](https://github.com/egoist/ts-starter)
-
-## Using this template
-
-- Search `ts-starter` and replace it with your custom package name.
-- Search `sxzz` and replace it with your name.
-- Remove sponsors below.
-
-Features:
-
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Bundle with blazing fast [tsdown](https://github.com/sxzz/tsdown)
-- Test with [Vitest](https://vitest.dev)
-
-<!-- Remove aboves -->
+Utility function to efficiently merge UnoCSS classes without style conflicts.
 
 ## Install
 
 ```bash
-npm i ts-starter
+npm i uno-merge
 ```
 
-## Sponsors
+## Usage
 
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
-  </a>
-</p>
+```js
+import { unoMerge } from 'uno-merge'
+
+// Merges classes and resolves conflicts
+unoMerge('text-red text-lg', 'text-blue text-center')
+// => 'text-lg text-blue text-center'
+
+// Later classes override earlier ones with the same utility
+unoMerge('bg-red-500 p-2', 'bg-blue-500')
+// => 'p-2 bg-blue-500'
+
+// Handles complex utility combinations
+unoMerge('flex flex-col items-start', 'grid grid-cols-2')
+// => 'grid grid-cols-2 items-start'
+```
+
+## Features
+
+- Resolves conflicts between UnoCSS utility classes
+- Works with arbitrary values and variants
+- Supports dynamic class merging
+- Fully typed with TypeScript
+- Zero dependencies
 
 ## License
 
-[MIT](./LICENSE) License © 2025 [三咲智子 Kevin Deng](https://github.com/sxzz)
+[MIT](./LICENSE) License 2025 [zhangmo8](https://github.com/zhangmo8)
